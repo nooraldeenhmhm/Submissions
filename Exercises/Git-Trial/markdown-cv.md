@@ -1,3 +1,4 @@
+![Image](https://raw.githubusercontent.com/nooraldeenhmhm/Submissions/master/my%20photo.jpg "noor")
 Noor Alden Alhamedi
 
 Lebanon-Beirut-Airport Road
@@ -73,9 +74,7 @@ ring damages and inaccuracy and report it.
 
 -   Monitoring all production and maintenance jobs and submit daily report to the responsible department.
 
-**FALAFEL CHIEF, ALKHADER RESTAURANT, BEIRUT**
 
-*(Septempre2017 -- April 2018)*
 
 **LIBRARY WORKER, PINGOSS LIBRARY, DEIR ALKAMAR**
 
