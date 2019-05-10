@@ -1,0 +1,201 @@
+body{
+    background-color: darkslategrey;
+}
+
+.container{
+
+    width: 60%;
+    
+    margin-right:auto;
+    margin-left:auto;
+
+
+    margin-top:auto;
+
+
+
+}
+.top{
+    width: 100%;
+    height: 5cm;
+    margin-right:auto;
+    margin-left:auto;
+
+
+    margin-top:auto;
+
+    background-image: url(planet.jpg);
+    background-position: center;
+    image-rendering: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+}
+
+h3{
+font-size: 30px;
+    color: rgb(247, 247, 247);
+    
+    padding-left: 40px;
+    padding-top: 40px;
+    
+align-self:left;
+}
+h6{
+    font-size: 15px;
+    color: rgb(248, 250, 244);
+    
+    padding-left: 40px;
+    margin-top: 0.5cm;
+align-self:left;
+}
+    #menu{
+        width:100%;
+       height:1.2cm ;
+        margin-right:auto;
+    margin-left:auto;
+    margin-top:5px;
+  
+    }
+.navbar{
+   /* width: 60%;
+    height:1.2cm ;
+
+    
+    margin-right:auto;
+    margin-left:auto;
+
+
+    margin-top:5px;
+    padding: auto;*/
+
+    list-style-type: none;
+    overflow: hidden;
+    color: darkolivegreen;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+    color: white;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .active {
+    background-color: #4CAF50;
+  }
+  .container2{
+clear: both;
+width: 100%;
+
+margin-left: auto;
+margin-right: auto;
+margin-bottom: auto;
+background: #333;
+display: flex;
+  }
+
+  .menus{
+    height: 100%;
+width: 25%;
+float: left;
+margin-left: auto;
+/*margin-top: 3px;*/
+margin-bottom: auto;
+color: white;
+/*padding-left: 10px;*/
+background: #333;
+display: inline;
+
+  }
+  .discribtion{
+height: 100%;
+width: 75%;
+float: right;
+/*margin-top: 3px;*/
+margin-right: auto;
+margin-bottom: auto;
+color: white;
+background: #333;
+/*padding-bottom: 100%;
+margin-bottom: -100%;*/
+display:inline;
+
+  }
+.para-under-menu{
+      clear: both;
+     padding-top:20px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+ 
+  
+   .left-menu{
+    
+    color: white;
+      background: #333;
+      padding-left: 10px;
+  }
+  .left-menu a{
+
+padding: 2px 7px;
+  }
+  
+  
+  .galary{
+       
+       
+       padding-left: 10px;
+   } 
+  .left-para{
+      float: left;
+      width: 49%;
+      border-right: 1px solid #000;
+      padding-top: 20px;
+      display: inline;
+
+
+  } 
+  .left-para p { 
+   
+      padding-right: 20px;
+  }
+ 
+  .right-para{
+    display: inline;
+    padding-top: 20px;
+    
+width: 50%;
+float: right;
+
+  }
+
+  .right-para p{
+    padding-left: 10px;
+  }
+  button{
+    display: inline;
+    width: 85px;
+    margin-right: 10px;
+      float: right;
+  }
+  .footer{
+    float: inline-start;
+    margin-top:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+  width: 100%;
+ height:1.2cm;
+  color: white;
+  background: #333;
+  text-align: center;
+  
+
+  }
