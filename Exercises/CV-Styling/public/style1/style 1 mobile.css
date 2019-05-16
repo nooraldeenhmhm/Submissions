@@ -1,0 +1,293 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+#warpper{
+width:100%;
+position: relative;
+top:0;
+margin: 0 auto 0 auto;
+height: 1000px;
+
+}
+
+header{
+ 
+   width: 100%;
+    background-color: gray;
+    height: 150px;
+}
+
+
+header div{
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+
+}
+figure{
+    position: absolute;
+    left: 20%;
+    top:5%;
+}
+#contact{
+    
+    font-size:50;
+    padding: 2px;
+    background: red;
+    height: 22%;
+  position: absolute;
+  
+  top:1%;
+  line-height: 4%;
+  width: 10%;
+left: 70%;
+border-right: 750px solid black;
+margin-top: 2%;
+ 
+  
+
+}
+
+#contact h3 {
+  border: none;
+}
+#contact h3::before {
+  content: '';
+}
+
+.contact-value{
+width: 50%;
+padding-left: 95%;
+color: blue;
+/* line-height: 20px; */
+
+}
+.contact-type{
+
+margin-top: 5px;
+
+}
+dl{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top:12px ;
+  line-height: 5px;
+  
+}
+.content{
+    width:80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns:50% 50%;
+    grid-template-rows:br br br;
+    grid-template-areas: 
+    "ab com"
+    "ex edu"
+    "hob hob";
+}
+#about{
+    grid-area:ab;
+}
+#experiences{
+    grid-area: ex;
+}
+#competencies{
+grid-area: com;
+
+}
+#education{
+
+grid-area: edu;
+}
+#hobbies{
+
+grid-area: hob;
+}
+
+h3{
+    border-bottom: 2px solid gray;
+}
+
+.skills-skills-primary::before{
+  content:'Main';
+}
+.skills-skills-secondary::before{
+  content:'Others';
+}
+.skill{
+background-color: gray;
+border: 2px solid white;
+position: relative;
+/*border: 5px solid gray;*/
+
+
+}
+.experience-type{
+  color: red;
+}
+.experience-institution{
+  font-size: 14px;
+
+  color: red;
+}
+.experience-date span{
+color: gray;
+}
+.experience-location::before{
+  content: 'In';
+  color: gray;
+  }
+
+.experience-location{
+  color: gray;
+  }
+.experience-institution::before{
+  content: '@';
+  color: red;
+font-size:14px;
+  text-decoration: initial;
+}
+.skill[data-skill="5"]::before{
+  content: '';
+width: 50%;
+height: 20px;
+background-color: red;
+display: inline-block;
+  margin: 3px 3px 0 3px;
+
+    }
+    .skill[data-skill="3"]::before{
+      content: '';
+    width: 30%;
+    height: 20px;
+    background-color: red;
+    display: inline-block;
+      margin: 3px 3px 0 3px;
+    
+        }
+        .skill[data-skill="7"]::before{
+          content: '';
+        width: 70%;
+        height: 20px;
+        background-color: red;
+        display: inline-block;
+          margin: 3px 3px 0 3px;
+        
+            }
+            .skill[data-skill="9"]::before{
+              content: '';
+            width: 90%;
+            height: 20px;
+            background-color: red;
+            display: inline-block;
+              margin: 3px 3px 0 3px;
+            
+                }
+                .skill[data-skill="1"]::before{
+                  content: '';
+                width: 10%;
+                height: 20px;
+                background-color: red;
+                display: inline-block;
+                  margin: 3px 3px 0 3px;
+                
+                    }
+                
+    .skill span{
+
+      position: absolute;
+      top: 3px;
+      left:3px;
+      color: white;
+    }
+
+    
+/*     
+   .skill [data-skill="3"]{
+        background: red;
+        padding: 10px;
+    
+        border-right:400px solid gray;
+        margin: 10px;
+      /*  border-block-end: 100px;*/
+        
+        
+        
+       .skill [data-skill="9"]{
+            background: red;
+            padding: 10px;
+        
+            border-right:150px solid gray;
+            margin: 10px;
+          /*  border-block-end: 100px;*/
+            
+            }
+           .skill [data-skill="1"]{
+                background: red;
+                padding: 10px;
+            
+                border-right:50px solid gray;
+                margin: 10px;
+              /*  border-block-end: 100px;*/
+                
+                }
+               .skill [data-skill="7"]{
+                    background: red;
+                    padding: 10px;
+                
+                    border-right:300px solid gray;
+                    margin: 10px;
+                  /*  border-block-end: 100px;*/
+                    
+                    } 
+            
+h3::before{
+    content:' \25CF';
+    font-size:20px;
+   color: red;
+
+   
+}
+ @media(max-width:600px){
+
+#wapper{
+
+width:100%;
+height: auto;
+margin: auto;
+
+
+}
+
+.content{
+  width:100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns:100%;
+  grid-template-rows:br br br;
+  grid-template-areas: 
+  "ab "
+  "ex "
+  "com";
+}
+header{
+  height: 230px;
+}
+figure{
+position: absolute;
+margin-top: 100px;
+
+}
+
+#contact{
+  visibility: hidden;
+}
+#hobbies{
+  visibility: hidden;
+}
+#education{
+  visibility: hidden;
+}
+ }
