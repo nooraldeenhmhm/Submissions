@@ -3,12 +3,30 @@
     <head>
         <title>Step 5</title>
         <meta charset="UTF-8">
+<script>
+function multifunction(){
+
+var F_number=parseInt(document.getElementById("first_number").value);
+var S_number=parseInt(document.getElementById("second_number").value);
+var result=F_number*S_number;
+alert("the multiplication result is "+result);
+
+}
+
+
+
+
+</script>
+
+
+
+
     </head>
     <body>
         <form>
             <label for="first_number">first number : </label><input type="text" id="first_number" name="first_number"/><br/>
             <label for="second_number">second number : </label><input type="text" id="second_number" name="second_number"/><br/>
-            <button  id="validate" name ="validate">validate</button>
+            <button  id="validate" onclick="multifunction()" name ="validate">validate</button>
         </form>
     </body>
 </html>
