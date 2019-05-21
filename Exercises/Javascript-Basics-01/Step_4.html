@@ -3,13 +3,35 @@
     <head>
         <title>Step 4</title>
         <meta charset="UTF-8">
+     <script>
+      
+
+     function alerfunction(x , y,z){
+var name1=document.getElementById("name").value;
+      var surname1= document.getElementById("surname").value;
+      var city1= document.getElementById("city").value;
+   
+
+      alert("Hello;"+name1+" "+surname1+" from : "+city1);
+     
+     
+
+     }
+
+     
+     </script>
+
+
+
+
+
     </head>
     <body>
         <form>
             <label for="name">name : </label><input type="text" name="name" id="name"/>
             <label for="surname">surname : </label><input type="text" name="surname" id="surname"/>
             <label for="city">city : </label><input type="text" name="city" id="city"/>
-            <button  name="validate" id="validate">Validate</button>
+            <button  name="validate" onclick="alerfunction()"id="validate">Validate</button>
         </form>
     </body>
 </html>
