@@ -8,5 +8,23 @@
   <form>
     <label for="name">Your name  : </label><input type="text" name="name" value="" id="name"/>
   </form>
+
+<script>
+var x=document.createElement("div");
+  x.setAttribute("id","result");
+  document.body.appendChild(x);
+  
+
+document.getElementById("name").onchange=writetodiv;
+function writetodiv(){
+  var ch=document.getElementById("name").value;
+
+document.getElementById("result").innerHTML=ch;
+}
+
+</script>
+
+
+
 </body>
 </html>
