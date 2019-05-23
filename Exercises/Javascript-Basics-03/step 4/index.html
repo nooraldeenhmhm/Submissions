@@ -8,7 +8,24 @@
   <form>
     <label for="password">password : </label><input type="text" name="password" value="" id="password" />
     <label for="confirmation">Confirm : </label><input type="text" name="confirmation" value="" id="confirmation" />
-    <button type="button" name="button" >Test</button>
+    <button type="button" name="button" onclick="changeborder()" >Test</button>
   </form>
+<script>
+function changeborder(){
+  var x=document.getElementById("password").value;
+  if(x!="noor"){
+
+   document.getElementById("password").setAttribute("style", "border:1px solid red;");
+   document.getElementById("confirmation").setAttribute("style", "border:1px solid red;");
+  }
+
+  }
+
+
+
+</script>
+
+
+
 </body>
 </html>
