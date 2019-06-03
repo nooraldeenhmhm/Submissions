@@ -13,7 +13,9 @@
 <script>
 function changeborder(){
   var x=document.getElementById("password").value;
-  if(x!="noor"){
+  var y=document.getElementById("conformation").value;
+
+  if(x!=y){
 
    document.getElementById("password").setAttribute("style", "border:1px solid red;");
    document.getElementById("confirmation").setAttribute("style", "border:1px solid red;");
