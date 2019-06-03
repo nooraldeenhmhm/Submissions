@@ -1,0 +1,144 @@
+1-select Name from students
+
+Alex
+Basma
+Hasan
+Jana
+Layal
+Robert
+
+
+2-select *from students WHERE Age>30
+
+5	Robert	34	M	500
+6	Jana	33	F	500
+
+
+
+3-SELECT Name from students WHERE   Age>30 AND Gender='F'
+
+Jana
+
+
+
+4-SELECT Points from students WHERE   name='Alex'
+
+200
+
+
+5-insert into students (ID,name,Age,Gender,Points)
+VALUES(7,'nooraldeen',29,'M',400)
+
+
+ Result: query executed successfully.
+ 
+ 6- UPDATE students SET Points=600
+WHERE name='Basma'
+
+ Result: query executed successfully.
+ 
+ 7-UPDATE students SET Points=150
+WHERE name='Alex'
+
+
+Result: query executed successfully
+
+
+
+*****Creating Table****
+
+CREATE TABLE graduates (ID INTEGER NOTNULL PRIMARY AUTOINCREMENT,
+Name TEXT NOTNULL UNIQUE,
+Age INTEGER,
+Gender TEXT,
+Points INTEGER,
+Graduation date);
+
+1-INSERT INTO graduates(id,name, age, gender, points) SELECT*FROM students WHERE name='Layal'
+
+
+ Result: query executed successfully.
+ 
+ 
+ 
+ 2- update graduates SET Graduation='08/09/2018'
+ 
+ Result: query executed successfully
+ 
+ 
+ 
+ 3-DELETE FROM students WHERE name='Layal'
+ 
+  Result: query executed successfully
+
+
+  
+  **** Join*****
+  
+  11-SELECT employees.Name, companies.Name ,companies.Date
+FROM companies
+INNER JOIN employees on employees.Company=companies.Name
+
+
+Marc	Google	1998
+Maria	Google	1998
+Alaa	Facebook	2004
+Hala	Snapchat	2011
+
+
+12- SELECT name FROM(SELECT employees.Name, companies.Name ,companies.Date
+FROM companies
+INNER JOIN employees on employees.Company=companies.Name)
+WHERE date<2000
+
+
+Marc
+Maria
+
+
+13-select name from  (SELECT  companies.Name,companies.Date ,employees.Role
+FROM companies
+INNER JOIN employees on employees.Company=companies.Name)
+
+WHERE Role='Graphic Designer'
+
+
+Snapchat
+
+
+
+***** Count & Filter*****
+
+14-select name from students where Points=(SELECT max(Points)   FROM students )
+
+Basma
+
+15-SELECT avg(Points) from students
+
+383.333333333333
+
+
+16-SELECT count(Points) from students where Points=500
+
+
+2
+
+
+
+17-SELECT name FROM students
+WHERE name LIKE '%s%'
+
+Basma
+Hasan
+
+
+
+18-SELECT name FROM students
+ORDER by Points DESC
+
+Basma
+Robert
+Jana
+nooraldeen
+Alex
+Hasan
