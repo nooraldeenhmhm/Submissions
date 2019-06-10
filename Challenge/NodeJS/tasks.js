@@ -129,6 +129,10 @@ function remove(w){
 if (!w){
   tasks.pop();
 }
+else if(w>tasks.length){
+console.log("this task isn't existed!")
+
+}
 else {
 /*var index= w.parseInt();*/
 tasks.splice(w-1,1);
