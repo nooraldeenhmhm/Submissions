@@ -89,7 +89,7 @@ this function return list of possible commands
 
  */
 function help(){
-console.log('the possible commands is \n'+'hello\n'+'quit\n'+'exit\n'+'hello(arg)'+'list\n'+'add\n'+'remove\n');
+console.log('the possible commands is \n'+'hello\n'+'quit\n'+'exit\n'+'hello(arg)'+'list\n'+'add\n'+'remove\n'+'checked\n'+'unchecked\n');
 
 
 }
