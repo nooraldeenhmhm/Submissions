@@ -59,6 +59,10 @@ function onDataReceived(text) {
 
     add(textarr[1]);
   }
+  else if (textarr[0]==='remove'){
+
+    remove(textarr[1]);
+  }
   
  else {
     unknownCommand(text);
@@ -121,7 +125,15 @@ else{
 }
 
 }
-
+function remove(w){
+if (!w){
+  tasks.pop();
+}
+else {
+/*var index= w.parseInt();*/
+tasks.splice(w-1,1);
+}
+}
 
 
 /**
