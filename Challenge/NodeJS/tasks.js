@@ -55,7 +55,10 @@ function onDataReceived(text) {
 
     list();
   }
- 
+  else if (textarr[0]==='add'){
+
+    add(textarr[1]);
+  }
   
  else {
     unknownCommand(text);
@@ -101,15 +104,23 @@ console.log("hello!")
   console.log(x.trim() +'!');
 }
 }
-var tasks =[];
+var tasks =["task 1", "task 2"];
 function list(){
- tasks=["task 1", "task 2"];
+ 
 for (let i=0; i<=tasks.length-1; i++){
   console.log(i+1+"-"+tasks[i]);
 }
 
 }
+function add(v){
+if (!v){
+  console.log("ERROR")
+}
+else{
+  tasks.push(v);
+}
 
+}
 
 
 
