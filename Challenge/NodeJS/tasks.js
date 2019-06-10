@@ -40,11 +40,18 @@ function onDataReceived(text) {
   else if(text === 'hello\n'){
     hello();
   }
+  else if (text==='help\n'){
+    help();
+  }
   else{
     unknownCommand(text);
   }
 }
+function help(){
+console.log('the possible commands is \n'+'hello\n'+'quit\n'+'exit\n');
 
+
+}
 
 /**
  * prints "unknown command"
