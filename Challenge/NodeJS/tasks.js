@@ -64,7 +64,7 @@ this function return list of possible commands
 
  */
 function help(){
-console.log('the possible commands is \n'+'hello\n'+'quit\n'+'exit\n');
+console.log('the possible commands is \n'+'hello\n'+'quit\n'+'exit\n'+'hello(arg)');
 
 
 }
