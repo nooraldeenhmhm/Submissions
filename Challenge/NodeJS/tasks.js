@@ -41,6 +41,7 @@ function onDataReceived(text) {
   if (textarr[0] === 'quit' || text==='exit') {
     quit();
   }
+
   else if (textarr[0]==='help'){
     help();
   }
@@ -49,6 +50,10 @@ function onDataReceived(text) {
    else if(textarr[0] ==='hello'){
     hello(textarr[1]);
 
+  }
+  else if (textarr[0]==='list'){
+
+    list();
   }
  
   
@@ -96,6 +101,16 @@ console.log("hello!")
   console.log(x.trim() +'!');
 }
 }
+var tasks =[];
+function list(){
+ tasks=["task 1", "task 2"];
+for (let i=0; i<=tasks.length-1; i++){
+  console.log(i+1+"-"+tasks[i]);
+}
+
+}
+
+
 
 
 /**
