@@ -1,4 +1,4 @@
-
+var tasks =[{taskname:"play", checked:"no"}];
 /**
  * Starts the application
  * This is the function that is run when the app starts
@@ -68,6 +68,15 @@ function onDataReceived(text) {
      var chng=textarr[2];
     edit(indx,chng);
   }
+
+  else if (textarr[0]==='checked'){
+
+    checked(textarr[1]);
+  }
+  else if (textarr[0]==='unchecked'){
+
+    unchecked(textarr[1]);
+  }
  else {
     unknownCommand(text);
   }
@@ -112,26 +121,35 @@ console.log("hello!")
   console.log(x.trim() +'!');
 }
 }
-var tasks =["task 1", "task 2"];
+
 function list(){
  
-for (let i=0; i<=tasks.length-1; i++){
-  console.log(i+1+"-"+tasks[i]);
+for (let i=0; i<tasks.length; i++){
+  if (tasks[i].checked !=="done"){
+  console.log(i+1+"-"+"[ ]"+tasks[i].taskname);
+}
+else{
+  console.log(i+1+"-"+"[✓]"+tasks[i].taskname);
 }
 
+}
 }
 function add(v){
 if (!v){
   console.log("ERROR")
 }
 else{
-  tasks.push(v);
+  var task={taskname:v,checked:'no'};
+  tasks.push(task);
+ 
 }
 
 }
 function remove(w){
 if (!w){
   tasks.pop();
+ 
+
 }
 else if(w>tasks.length){
 console.log("this task isn't existed!")
@@ -140,6 +158,7 @@ console.log("this task isn't existed!")
 else {
 /*var index= w.parseInt();*/
 tasks.splice(w-1,1);
+
 }
 }
 function edit(indx1,chng1){
@@ -147,17 +166,39 @@ if(!indx1 && !chng1){
   console.log("ERROR");
 }
 else if(indx1 && !chng1){
-
+  var task={taskname:indx1,checked:'no'};
   tasks.pop();
-  tasks.push(indx1);
+  tasks.push(task);
 }
 else{
-  tasks[indx1-1]=chng1;
+  var task={taskname:chng1,checked:'no'};
+  tasks[indx1-1]=task;
 
 }
 
 
 }
+
+function checked(n){
+  if (!n){
+    console.log("ERROR")
+  }
+  else{
+  tasks[n-1].checked="done";
+  }
+   
+  }
+
+  function unchecked(n){
+    if (!n){
+      console.log("ERROR")
+    }
+    else{ 
+    tasks[n-1].checked="no";}
+     
+    }
+
+
 
 
 /**
