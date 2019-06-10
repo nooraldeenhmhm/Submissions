@@ -63,7 +63,11 @@ function onDataReceived(text) {
 
     remove(textarr[1]);
   }
-  
+  else if (textarr[0]==='edit'){
+     var indx=textarr[1];
+     var chng=textarr[2];
+    edit(indx,chng);
+  }
  else {
     unknownCommand(text);
   }
@@ -137,6 +141,22 @@ else {
 /*var index= w.parseInt();*/
 tasks.splice(w-1,1);
 }
+}
+function edit(indx1,chng1){
+if(!indx1 && !chng1){
+  console.log("ERROR");
+}
+else if(indx1 && !chng1){
+
+  tasks.pop();
+  tasks.push(indx1);
+}
+else{
+  tasks[indx1-1]=chng1;
+
+}
+
+
 }
 
 
