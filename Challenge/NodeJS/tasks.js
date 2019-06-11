@@ -77,6 +77,14 @@ function onDataReceived(text) {
 
     unchecked(textarr[1]);
   }
+  else if (textarr[0]==='save'){
+
+    save(textarr[1]);
+  }
+  else if (textarr[0]==='read'){
+
+   read(textarr[1]);
+  }
  else {
     unknownCommand(text);
   }
@@ -211,6 +219,31 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+function save(name){
+var fs = require('fs');
+
+name=name+".txt";
+ str_tasks = JSON.stringify(tasks);
+fs.writeFile(name, str_tasks, function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+}
+
+function read( name){
+
+name=this.name+'txt'
+  var http = require('http');
+var fs = require('fs');
+http.createServer(function (req, res) {
+  fs.readFile(name, function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+  });
+}).listen(8080); 
+}
+
 
 
 // The following line starts the application
