@@ -47,8 +47,9 @@ app.get('/hello',function(req, res) {
 const movies = [
     { title: 'Jaws', year: 1975, rating: 8 },
     { title: 'Avatar', year: 2009, rating: 7.8 },
-    { title: 'Brazil', year: 1985, rating: 8 },
-    { title: 'الإرهاب والكباب‎', year: 1992, rating: 6.2 }
+   
+    { title: 'الإرهاب والكباب‎', year: 1992, rating: 6.2 },
+    { title: 'Brazil', year: 1985, rating: 8 }
 ]
 
 app.get('/movie/create/', function (req, res, next) {
@@ -61,9 +62,76 @@ app.get('/movie/create/', function (req, res, next) {
 
 app.get('/movie/read/', function (req, res, next) {
 
-      
+     
     res.send({status:200,data:movies})
 });
+
+app.get('/movie/read/by_date', function (req, res, next) {
+
+   
+movies.sort(function (a, b) {
+    return a.year>b.year;
+});
+/* document.write('<pre>' + JSON.stringify(data, 0, 4) + '</pre>'); */
+   
+/* movies.sort(function(a, b) {
+    return a.year > b.year;
+});
+console.log(movies); */
+/* movies.sort(); */
+
+
+    res.send({status:200,data:movies.sort(function (a, b) {
+        return a.year-b.year;
+    })})
+});
+
+app.get('/movie/read/by_rating', function (req, res, next) {
+
+   
+   /*  movies.sort(function (a, b) {
+        return a.year>b.year;
+    }); */
+    /* document.write('<pre>' + JSON.stringify(data, 0, 4) + '</pre>'); */
+       
+    /* movies.sort(function(a, b) {
+        return a.year > b.year;
+    });
+    console.log(movies); */
+    /* movies.sort(); */
+    
+    
+        res.send({status:200,data:movies.sort(function (a, b) {
+            return b.rating-a.rating;
+        })})
+    });
+    
+
+    app.get('/movie/read/by_title', function (req, res, next) {
+
+   
+        /*  movies.sort(function (a, b) {
+             return a.year>b.year;
+         }); */
+         /* document.write('<pre>' + JSON.stringify(data, 0, 4) + '</pre>'); */
+            
+         /* movies.sort(function(a, b) {
+             return a.year > b.year;
+         });
+         console.log(movies); */
+         /* movies.sort(); */
+         
+         
+             res.send({status:200,data:movies.sort(function (a, b) {
+                 return a.name-b.name;
+             })})
+         });
+
+
+
+
+
+
 
 
 
