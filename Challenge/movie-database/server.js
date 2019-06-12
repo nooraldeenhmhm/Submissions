@@ -128,7 +128,24 @@ app.get('/movie/read/by_rating', function (req, res, next) {
          });
 
 
+         app.get('/movie/read/id/:i', function (req, res, next) {
+    const Id=req.params.i
+   
+  if(Id>movies.length){
+    res.send({status:404, error:true, message:'the movie '+Id+ ' does not exist'});
+  }
+/*   else if(!Id){
+    res.send("enter a movie id to search for");
 
+} */
+          else {
+                res.send({status:200, data:movies[Id]});
+          }
+
+
+            
+        });
+        
 
 
 
