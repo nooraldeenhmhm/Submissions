@@ -202,8 +202,31 @@ app.get('/movie/delete/:id', function (req, res, next) {
 
 app.get('/movie/update/', function (req, res, next) {
 
-      
-    res.send({status:200,message:"hello,"+req.params.id})
+    var query = require('url').parse(req.url,true).query;
+    const title=query.title;
+    const year=query.year;
+    const rating=query.rating;
+    const id=query.id;
+    
+if (title && !rating){
+    movies[id].title=title;
+    res.send({data:movies})
+}
+
+if (rating){
+    movies[id].rating=rating;
+    res.send({data:movies})
+}
+if (year){
+    movies[id].year=year;
+    res.send({data:movies})
+}
+
+if (title && rating){
+    movies[id].title=title;
+    movies[id].rating=rating;
+    res.send({data:movies})
+}
 });
 
 /* 
