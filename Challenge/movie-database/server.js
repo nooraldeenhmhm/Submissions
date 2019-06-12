@@ -19,6 +19,30 @@ app.get('/time',function(req, res) {
 });
 });
 
+app.get('/hello',function(req, res) {
+
+    res.send({status:200,message:"hello "});
+});
+/* app.get(/.*fly$/, function (req, res) {
+    res.send('/.*fly$/')
+  });
+ */
+  app.get('/hello/:id', function (req, res, next) {
+
+      
+      res.send({status:200,message:"hello,"+req.params.id})
+  });
+
+  app.get('/search', function (req, res) {
+    const s=req.query.s;
+      if  (!s) {  res.send({status:500, error:true, message:"you have to provide a search"})
+          
+        }
+        else{
+            res.send({status:200,message:"OK", data:s})
+        }
+      
+});
 
 /* 
 // On localhost:3000/welcome
