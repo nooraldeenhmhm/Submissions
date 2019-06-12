@@ -147,7 +147,39 @@ app.get('/movie/read/by_rating', function (req, res, next) {
         });
         
 
+app.get('/movies/add',function (req, res, next) {
+    var query = require('url').parse(req.url,true).query;
+const title=query.title;
+const year=query.year;
+const rating=query.rating;
+var movie;
+if (!title || !year || year>9999 ||year<1000 || isNaN(year) ){
+res.send({status:403, error:true, message:'you cannot create a movie without providing a title and a year'})
 
+}
+if (title && year && rating){
+movie={title:title,
+year:year,
+rating:rating
+}
+movies.push(movie);
+res.send({data:movies})
+}
+if (title && year && !rating){
+
+    movie={title:title,
+        year:year,
+        rating:4
+        }
+        movies.push(movie);
+        res.send({data:movies})
+}
+
+
+
+
+
+});
 
 
 
