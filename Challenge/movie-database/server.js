@@ -147,7 +147,7 @@ app.get('/movie/read/by_rating', function (req, res, next) {
         });
         
 
-app.get('/movies/add',function (req, res, next) {
+app.get('/movie/add',function (req, res, next) {
     var query = require('url').parse(req.url,true).query;
 const title=query.title;
 const year=query.year;
@@ -182,6 +182,22 @@ if (title && year && !rating){
 });
 
 
+app.get('/movie/delete/:id', function (req, res, next) {
+
+    var id=req.params.id;
+    console.log(id)
+    if (id<movies.length){
+
+      movies.splice(id,1);
+      res.send({data:movies})
+    }
+
+      else{
+    res.send({status:404, error:true, message:'the movie '+id+ ' does not exist'})
+
+
+}
+});
 
 
 app.get('/movie/update/', function (req, res, next) {
@@ -190,12 +206,12 @@ app.get('/movie/update/', function (req, res, next) {
     res.send({status:200,message:"hello,"+req.params.id})
 });
 
-
+/* 
 app.get('/movie/delete/', function (req, res, next) {
 
       
     res.send({status:200,message:"hello,"+req.params.id})
-});
+}); */
 /* 
 // On localhost:3000/welcome
 app.get('/welcome', function (req, res) {
