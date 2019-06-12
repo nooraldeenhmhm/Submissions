@@ -44,6 +44,41 @@ app.get('/hello',function(req, res) {
       
 });
 
+const movies = [
+    { title: 'Jaws', year: 1975, rating: 8 },
+    { title: 'Avatar', year: 2009, rating: 7.8 },
+    { title: 'Brazil', year: 1985, rating: 8 },
+    { title: 'الإرهاب والكباب‎', year: 1992, rating: 6.2 }
+]
+
+app.get('/movie/create/', function (req, res, next) {
+
+      
+    res.send({status:200,message:"hello,"+req.params.id})
+});
+
+
+
+app.get('/movie/read/', function (req, res, next) {
+
+      
+    res.send({status:200,data:movies})
+});
+
+
+
+app.get('/movie/update/', function (req, res, next) {
+
+      
+    res.send({status:200,message:"hello,"+req.params.id})
+});
+
+
+app.get('/movie/delete/', function (req, res, next) {
+
+      
+    res.send({status:200,message:"hello,"+req.params.id})
+});
 /* 
 // On localhost:3000/welcome
 app.get('/welcome', function (req, res) {
