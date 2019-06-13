@@ -1,11 +1,60 @@
 
 // Require express and create an instance of it
+var mongoose =require('mongoose') ;
 var express = require('express');
 var app = express();
 
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
+
+/* 
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://noor:Noor1990@cluster0-1jcfj.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+}); */
+const uri = "mongodb+srv://noor:Noor1990@cluster0-1jcfj.mongodb.net/test?retryWrites=true&w=majority";
+
+mongoose.connect(uri).then(
+    ()=>{console.log("connected")},
+    err =>{console.log("err",err);}
+  );
+
+
+  const movieSchema = mongoose.Schema({
+      title:String,
+      year:Number,
+      rating:Number,
+      
+  });
+  const Movie = mongoose.model('Movie',movieSchema);
+ var movie =new Movie({title:'the trip',year:2002, rating:7});
+ 
+movie.save(); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // on the request to root (localhost:3000/)
 app.get('/', function (req, res) {
-    res.send('OK');
+    res.render('index');
 });
 /* req.params: {"status":"200", "message":"OK"}; */
 app.get('/test',function(req, res) {
@@ -250,3 +299,4 @@ app.use(function(req, res, next) {
 app.listen(3000, function () {
     console.log('Example app listening on port 3000.');
 });
+/* mongodb+srv://noor:Noor@1990@cluster0-1jcfj.mongodb.net/test?retryWrites=true&w=majority */
